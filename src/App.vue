@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    sdsa
     <router-view/>
   </div>
 </template>

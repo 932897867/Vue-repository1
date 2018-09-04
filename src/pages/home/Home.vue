@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a href="http://localhost:8080/#/list">前往List</a>
+    <router-link to="/city">前往city</router-link>
     <router-link to="/list">to list</router-link>
     <span class="iconfont">&#xe650;</span>
     <home-header></home-header>
