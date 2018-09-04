@@ -4,59 +4,20 @@
       <swiper-slide v-for="(page, index) of pages" :key="index">
         <div class="icon" v-for="item of page" :key="item.id">
           <div class="icon-img">
-            <img class="icon-img-content" src="http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png">
+            <img class="icon-img-content" :src="item.imgUrl">
           </div>
           <p class="img-desc">景点门票</p>
         </div>
       </swiper-slide>
     </swiper>
   </div>
-
  </template>
 
 <script>
 export default {
   name: 'HomeIcons',
-  data () {
-    return {
-      list: [{
-        id: '001',
-        item: 'http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png',
-        desc: 'asdsdasd'
-      }, {
-        id: '002',
-        item: 'http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png',
-        desc: 'asdsdasd'
-      }, {
-        id: '003',
-        item: 'http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png',
-        desc: 'asdsdasd'
-      }, {
-        id: '004',
-        item: 'http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png',
-        desc: 'asdsdasd'
-      }, {
-        id: '005',
-        item: 'http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png',
-        desc: 'asdsdasd'
-      }, {
-        id: '006',
-        item: 'http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png',
-        desc: 'asdsdasd'
-      }, {
-        id: '007',
-        item: 'http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png',
-        desc: 'asdsdasd'
-      }, {
-        id: '008',
-        item: 'http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png',
-        desc: 'asdsdasd'
-      }, {
-        id: '009',
-        item: 'http://img1.qunarzz.com/piao/fusion/1611/54/ace00878a52d9702.png',
-        desc: 'asdsdasd'
-      }]
-    }
+  props: {
+    list: Array
   },
   computed: {
     pages () {
