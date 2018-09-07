@@ -2,16 +2,20 @@
   <div class="recommand-wraper">
     <div class="title">热销推荐</div>
     <ul>
-      <li class="item border-bottom"
+        <router-link
+          tag="li"
+          class="item border-bottom"
           v-for="item of list"
-          :key="item.id">
-        <img class="item-img" :src="item.imgUrl">
-        <div class="item-info">
-          <p class="item-title">{{item.title}}</p>
-          <p class="item-des">{{item.desc}}</p>
-          <button class="item-detail">详情按钮</button>
-        </div>
-      </li>
+          :key="item.id"
+          :to="'/detail/' + item.id"
+          >
+          <img class="item-img" :src="item.imgUrl">
+          <div class="item-info">
+            <p class="item-title">{{item.title}}</p>
+            <p class="item-des">{{item.desc}}</p>
+            <button class="item-detail">详情按钮</button>
+          </div>
+        </router-link>
     </ul>
   </div>
 </template>
