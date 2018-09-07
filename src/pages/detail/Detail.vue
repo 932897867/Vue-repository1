@@ -1,14 +1,17 @@
 <template>
   <div>
+    <detail-header></detail-header>
     <banner
       :bannerImg="bannerImg"
       :gallaryImgs="gallaryImgs"
       :sightName="sightName"></banner>
+    <div class="content"></div>
   </div>
 </template>
 
 <script>
 import Banner from './components/Banner'
+import DetailHeader from './components/Header'
 import axios from 'axios'
 export default {
   name: 'Detail',
@@ -21,7 +24,8 @@ export default {
     }
   },
   components: {
-    Banner
+    Banner,
+    DetailHeader
   },
   methods: {
     getDetailInfo () {
@@ -46,5 +50,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-
+  .content
+    height: 50rem
 </style>
