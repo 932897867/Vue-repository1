@@ -1,8 +1,8 @@
 <template>
   <div>
-    <router-link to="/city">前往city</router-link>
-    <router-link to="/list">to list</router-link>
+    <router-link to="/city">{{this.$store.state.city}}</router-link>
     <span class="iconfont">&#xe650;</span>
+    <router-link to="/list">to list</router-link>
     <home-header></home-header>
     <home-swiper :list="swiperList"></home-swiper>
     <home-icons :list="iconList"></home-icons>
@@ -43,7 +43,6 @@ export default {
         this.recommendList = data.recommendList
         this.swiperList = data.swiperList
         this.iconList = data.iconList
-        // console.log(this.swiperList)
       }
     }
   },
