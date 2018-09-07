@@ -1,6 +1,6 @@
 <template>
   <div>
-    <router-link to="/city">{{this.$store.state.city}}</router-link>
+    <router-link to="/city" class="city">{{this.city}}</router-link>
     <span class="iconfont">&#xe650;</span>
     <router-link to="/list">to list</router-link>
     <home-header></home-header>
@@ -16,6 +16,8 @@ import HomeHeader from './components/Header'
 import HomeIcons from './components/Icons'
 import HomeRecommend from './components/Recommend'
 import axios from 'axios'
+import { mapState } from 'vuex'
+
 export default {
   name: 'Home',
   components: {
@@ -48,12 +50,19 @@ export default {
   },
   mounted () {
     this.getHomeInfo()
+  },
+  computed: {
+    ...mapState(['city'])
   }
 }
 </script>
 
 <style lang="stylus" scoped>
-  template {
+  div {
     color: green;
+  }
+  .city {
+    min-width: 1.04rem
+    padding: 0 .1rem
   }
 </style>
